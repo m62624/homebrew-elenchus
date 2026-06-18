@@ -1,25 +1,25 @@
 class ElenchusCli < Formula
-  desc "Command-line interface for the elenchus reasoning engine: check a .vrf string or file and report CONSISTENT / WARNING / UNDERDETERMINED / CONFLICT."
+  desc "CLI for checking elenchus .vrf programs."
   homepage "https://github.com/m62624/elenchus"
-  version "0.1.3"
+  version "0.1.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/elenchus/releases/download/v0.1.3/elenchus-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "5cf8b817ffd1e84c4e53a8fc76198ab2e49f5eb743bfa121d8b228879cdcf72a"
+      url "https://github.com/m62624/elenchus/releases/download/v0.1.4/elenchus-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "3704742e76fef691dbeb19a0d544f9d407910dce72283285352469803ff36934"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/elenchus/releases/download/v0.1.3/elenchus-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "64f959b80159506e8e6992fe83543ec9463bf6e0326f2001be6758a571461137"
+      url "https://github.com/m62624/elenchus/releases/download/v0.1.4/elenchus-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "a2fa502b77aca513b398ddb22b207dc9d68a3bc78241b010a22abe3a78771f72"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/elenchus/releases/download/v0.1.3/elenchus-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "e2bdd28301092537fb9e68a2b83a3e88cea310b78f3c2c4285b2db605c4cb9d7"
+      url "https://github.com/m62624/elenchus/releases/download/v0.1.4/elenchus-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "7b05a3a6e76b9e683c0d7278fc0a5b523a9f6b70d39ff1be7cb21da354173989"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/elenchus/releases/download/v0.1.3/elenchus-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "5825f18fbf4154a725843503a7acfc09b5a570053415349a9daa47309981ce4d"
+      url "https://github.com/m62624/elenchus/releases/download/v0.1.4/elenchus-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "9a47cabf9213dcb2870a05f2394dd40eceece09e4b13c26218cbf853ffd50279"
     end
   end
   license "MIT"
