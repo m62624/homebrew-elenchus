@@ -1,16 +1,61 @@
 # homebrew-elenchus
 
-Homebrew tap for [elenchus](https://github.com/m62624/elenchus) — a constraint validator for LLM-generated reasoning.
+A [Homebrew](https://brew.sh) **tap** (third-party package repository) for
+[elenchus](https://github.com/m62624/elenchus). It ships prebuilt binaries for
+macOS and Linux, updated automatically by elenchus's release pipeline — you do
+not build from source.
+
+> This repo only contains packaging. The source code, docs and issue tracker
+> live in the [main elenchus repository](https://github.com/m62624/elenchus).
+
+## What's in the tap
+
+| Formula        | Installs binary | Purpose                                                        |
+| -------------- | --------------- | ------------------------------------------------------------- |
+| `elenchus-cli` | `elenchus`      | Command-line checker for `.vrf` programs.                      |
+| `elenchus-mcp` | `elenchus-mcp`  | MCP stdio server exposing the checker to AI agents.           |
 
 ## Install
 
+First add the tap (once), then install whichever formula you need:
+
 ```bash
 brew tap m62624/elenchus
-brew install m62624/elenchus/elenchus
+
+# CLI — provides the `elenchus` command
+brew install m62624/elenchus/elenchus-cli
+
+# MCP server — provides the `elenchus-mcp` command (for AI agents)
+brew install m62624/elenchus/elenchus-mcp
 ```
 
-## About
+Once the tap is added you can use the short names too: `brew install elenchus-cli`.
 
-[Elenchus](https://github.com/m62624/elenchus) is a small SAT engine with three-valued logic (TRUE/FALSE/UNKNOWN). It checks LLM-generated premises for logical consistency — not truth, but contradictions.
+Verify and upgrade:
 
-For small local models. Beta.
+```bash
+elenchus --version
+brew upgrade m62624/elenchus/elenchus-cli
+```
+
+Uninstall / remove the tap:
+
+```bash
+brew uninstall elenchus-cli elenchus-mcp
+brew untap m62624/elenchus
+```
+
+Supported platforms: macOS (Apple Silicon & Intel) and Linux (arm64 & x86_64).
+
+## What is elenchus?
+
+A small SAT engine with three-valued logic (TRUE / FALSE / UNKNOWN). It checks
+LLM-generated premises for logical **consistency** — not truth, but
+contradictions. Built for small local models. Beta.
+
+See the [main repository](https://github.com/m62624/elenchus) for the language
+spec, usage and the Claude Code skill.
+
+## License
+
+MIT — see the formula files and the [main repository](https://github.com/m62624/elenchus).
