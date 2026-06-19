@@ -1,25 +1,25 @@
 class ElenchusMcp < Formula
   desc "MCP stdio server exposing elenchus checks to AI agents."
   homepage "https://github.com/m62624/elenchus"
-  version "0.4.1"
+  version "0.5.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/elenchus/releases/download/v0.4.1/elenchus-mcp-aarch64-apple-darwin.tar.xz"
-      sha256 "ae36364a12acdec9eec7c73eb57bd0a951e874699b55fdab631ab335c9be7166"
+      url "https://github.com/m62624/elenchus/releases/download/v0.5.0/elenchus-mcp-aarch64-apple-darwin.tar.xz"
+      sha256 "22d3b44086d7befbac93ec4dfa21e267231e416415ca32c091f7374bc328796d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/elenchus/releases/download/v0.4.1/elenchus-mcp-x86_64-apple-darwin.tar.xz"
-      sha256 "61eadf70f98c2281e14fb7205681f6a60e106d00faca564471851cb9513a569d"
+      url "https://github.com/m62624/elenchus/releases/download/v0.5.0/elenchus-mcp-x86_64-apple-darwin.tar.xz"
+      sha256 "4558f70a39a5fae0646ea0c4344972e64b0b202e494d799ba8be92ac8d4b3ec9"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/elenchus/releases/download/v0.4.1/elenchus-mcp-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b3d251f071e7ab308209722af1ff35b7ef3c6456b1ca8c55d131f568b27910a8"
+      url "https://github.com/m62624/elenchus/releases/download/v0.5.0/elenchus-mcp-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "eef57d0431c32c5855b12fb643f8cd91fc7f1b9e51d4f8de5d60f94d0ee6128d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/elenchus/releases/download/v0.4.1/elenchus-mcp-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "6cac4ff16bd8c8ac446922d67f8c8fcc96593ad1c322def2e48aba968a0cde89"
+      url "https://github.com/m62624/elenchus/releases/download/v0.5.0/elenchus-mcp-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "41c6721f33f4ba9062832d24448b1d42b4a3de90fb3a0e0c6d024e9cb4d8ecf4"
     end
   end
   license "MIT"
