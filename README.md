@@ -12,20 +12,25 @@ not build from source.
 
 | Formula        | Installs binary | Purpose                                                        |
 | -------------- | --------------- | ------------------------------------------------------------- |
-| `elenchus-cli` | `elenchus`      | Command-line checker for `.vrf` programs.                      |
+| `elenchus-cli` | `elenchus-cli`  | Command-line checker for `.vrf` programs.                      |
 | `elenchus-mcp` | `elenchus-mcp`  | MCP stdio server exposing the checker to AI agents.           |
 
-## CLI or MCP?
+## CLI or MCP — which one?
 
-Both give an LLM the same elenchus output. **Install `elenchus-cli` unless you
-have a specific reason to use the MCP server.** The CLI works in every harness
-that supports shell commands (Claude Code, CI, terminal) with no extra
-configuration — just call `elenchus`. The MCP server requires wiring up a
-JSON-RPC stdio transport in your harness, which adds setup for no gain in output.
+Both let an LLM run elenchus; the output is the same either way. The difference
+is setup cost:
+
+- **CLI (`elenchus-cli`)** — `elenchus-cli <file>` or `elenchus-cli --text "…"` from
+  the shell. Works in every harness that can run shell commands (Claude Code, any
+  CI pipeline, terminal). No extra configuration. **Recommended: if your harness
+  supports shell commands, use the CLI.**
+- **MCP server (`elenchus-mcp`)** — speaks stdio JSON-RPC. Useful when your harness
+  natively supports MCP and you'd rather not configure a shell tool, or when the
+  harness doesn't expose a shell at all. More moving parts to set up.
 
 The **skill** in the [main repository](https://github.com/m62624/elenchus) is
-adapted for both — it works identically whether the agent calls elenchus via CLI
-or via the MCP tool.
+adapted for both — it works identically whether the agent calls `elenchus-cli`
+via the CLI or via the MCP tool.
 
 ## Install
 
@@ -34,7 +39,7 @@ First add the tap (once), then install whichever formula you need:
 ```bash
 brew tap m62624/elenchus
 
-# CLI — provides the `elenchus` command (recommended)
+# CLI — provides the `elenchus-cli` command (recommended)
 brew install m62624/elenchus/elenchus-cli
 
 # MCP server — provides the `elenchus-mcp` command (for AI agents via MCP)
@@ -46,7 +51,7 @@ Once the tap is added you can use the short names too: `brew install elenchus-cl
 Verify and upgrade:
 
 ```bash
-elenchus --version
+elenchus-cli --version
 brew upgrade m62624/elenchus/elenchus-cli
 ```
 
