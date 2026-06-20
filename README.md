@@ -22,11 +22,11 @@ is setup cost:
 
 - **CLI (`elenchus-cli`)** — `elenchus-cli <file>` or `elenchus-cli --text "…"` from
   the shell. Works in every harness that can run shell commands (Claude Code, any
-  CI pipeline, terminal). No extra configuration. **Recommended: if your harness
-  supports shell commands, use the CLI.**
-- **MCP server (`elenchus-mcp`)** — speaks stdio JSON-RPC. Useful when your harness
-  natively supports MCP and you'd rather not configure a shell tool, or when the
-  harness doesn't expose a shell at all. More moving parts to set up.
+  CI pipeline, terminal). **Recommended: it needs no extra configuration, so if your
+  harness can run shell commands, use the CLI.**
+- **MCP server (`elenchus-mcp`)** — speaks stdio JSON-RPC. Worth the extra setup only
+  when your harness natively supports MCP and you'd rather not (or can't) run a
+  shell. Same output, more to configure.
 
 The **skill** in the [main repository](https://github.com/m62624/elenchus) is
 adapted for both — it works identically whether the agent calls `elenchus-cli`
@@ -42,7 +42,7 @@ brew tap m62624/elenchus
 # CLI — provides the `elenchus-cli` command (recommended)
 brew install m62624/elenchus/elenchus-cli
 
-# MCP server — provides the `elenchus-mcp` command (for AI agents via MCP)
+# MCP server — provides the `elenchus-mcp` command
 brew install m62624/elenchus/elenchus-mcp
 ```
 
