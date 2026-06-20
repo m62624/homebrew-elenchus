@@ -1,25 +1,25 @@
 class ElenchusCli < Formula
   desc "CLI for checking elenchus .vrf programs."
   homepage "https://github.com/m62624/elenchus"
-  version "0.5.0"
+  version "0.6.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/elenchus/releases/download/v0.5.0/elenchus-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "919c8bbf390ff13e34ea7705746569721540667730024fdfae041601c9983f4a"
+      url "https://github.com/m62624/elenchus/releases/download/v0.6.0/elenchus-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "c026cce2173b12066f4bd1403b60c828084287630db32700374a96efd88dd80a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/elenchus/releases/download/v0.5.0/elenchus-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "7a378ebf5db5f03c295f26e1bb6a7c31f43862d5e3beeee4c02ffea84152f683"
+      url "https://github.com/m62624/elenchus/releases/download/v0.6.0/elenchus-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "407c1d16f8c744631fefa8cf5c0e6bd6109fe0a45fca22e5875de6fb719fbc1d"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/elenchus/releases/download/v0.5.0/elenchus-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "6e682034a1b4478b59f90f7acd63738b2546c159667291ee9c65be4c874c55ec"
+      url "https://github.com/m62624/elenchus/releases/download/v0.6.0/elenchus-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c150c017808b5da3852cc9088d5c53c4c17d43affea174d70e816768934ab8b6"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/elenchus/releases/download/v0.5.0/elenchus-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "aa53c455c21ea378f3306e4637e95100e524be5f4574370d841c38b8eca88584"
+      url "https://github.com/m62624/elenchus/releases/download/v0.6.0/elenchus-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "c4d7c0bcb32d09fa6523bfcf30f0f5c4b545ec9e6e7f620b0ce435e6c8b07b49"
     end
   end
   license "MIT"
@@ -49,10 +49,10 @@ class ElenchusCli < Formula
   end
 
   def install
-    bin.install "elenchus" if OS.mac? && Hardware::CPU.arm?
-    bin.install "elenchus" if OS.mac? && Hardware::CPU.intel?
-    bin.install "elenchus" if OS.linux? && Hardware::CPU.arm?
-    bin.install "elenchus" if OS.linux? && Hardware::CPU.intel?
+    bin.install "elenchus-cli" if OS.mac? && Hardware::CPU.arm?
+    bin.install "elenchus-cli" if OS.mac? && Hardware::CPU.intel?
+    bin.install "elenchus-cli" if OS.linux? && Hardware::CPU.arm?
+    bin.install "elenchus-cli" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
