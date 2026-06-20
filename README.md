@@ -15,6 +15,18 @@ not build from source.
 | `elenchus-cli` | `elenchus`      | Command-line checker for `.vrf` programs.                      |
 | `elenchus-mcp` | `elenchus-mcp`  | MCP stdio server exposing the checker to AI agents.           |
 
+## CLI or MCP?
+
+Both give an LLM the same elenchus output. **Install `elenchus-cli` unless you
+have a specific reason to use the MCP server.** The CLI works in every harness
+that supports shell commands (Claude Code, CI, terminal) with no extra
+configuration — just call `elenchus`. The MCP server requires wiring up a
+JSON-RPC stdio transport in your harness, which adds setup for no gain in output.
+
+The **skill** in the [main repository](https://github.com/m62624/elenchus) is
+adapted for both — it works identically whether the agent calls elenchus via CLI
+or via the MCP tool.
+
 ## Install
 
 First add the tap (once), then install whichever formula you need:
@@ -22,10 +34,10 @@ First add the tap (once), then install whichever formula you need:
 ```bash
 brew tap m62624/elenchus
 
-# CLI — provides the `elenchus` command
+# CLI — provides the `elenchus` command (recommended)
 brew install m62624/elenchus/elenchus-cli
 
-# MCP server — provides the `elenchus-mcp` command (for AI agents)
+# MCP server — provides the `elenchus-mcp` command (for AI agents via MCP)
 brew install m62624/elenchus/elenchus-mcp
 ```
 
