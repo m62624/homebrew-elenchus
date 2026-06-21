@@ -1,25 +1,25 @@
 class ElenchusCli < Formula
   desc "CLI for checking elenchus .vrf programs."
   homepage "https://github.com/m62624/elenchus"
-  version "0.7.0"
+  version "0.7.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/elenchus/releases/download/v0.7.0/elenchus-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "0f22f86f755243d5d6d1a42268c866310f717b90f24490c3b93d723a56f1e886"
+      url "https://github.com/m62624/elenchus/releases/download/v0.7.1/elenchus-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "2fc6a5fd7f8b70da5f2039c1b2748b86ec0d5bf1f670263a142744cb4aec7910"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/elenchus/releases/download/v0.7.0/elenchus-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "f5c080f07364941801f6245b1aa720b3d8622fab676d8e637926b45a5b7f3480"
+      url "https://github.com/m62624/elenchus/releases/download/v0.7.1/elenchus-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "4d79d5e683ed2fbfbde59f7d5ad808c10c7f66bf93d2a4df57fc94606adc35ca"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/elenchus/releases/download/v0.7.0/elenchus-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "7a0e1d9cdbb69c3ee008e778d407d8ef23610b164ae894a666ec02505d888a85"
+      url "https://github.com/m62624/elenchus/releases/download/v0.7.1/elenchus-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "274ee6a231f3e6febc5409be26110821598500f0a6e487731892bd773af2c2c4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/elenchus/releases/download/v0.7.0/elenchus-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "818591c288e61ebcd52ff00aa73f8a86ce6fa644b0d5302d5eaa0f7b65d0228b"
+      url "https://github.com/m62624/elenchus/releases/download/v0.7.1/elenchus-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "6c992ae3533b5ab32c6b162dbe1349b5fcd23895c9bab7001b1dc7f2cc9523c5"
     end
   end
   license "MIT"
